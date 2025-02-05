@@ -5,10 +5,9 @@ console.log(text.textContent);
 console.log(button.textContent)
 
 function changeText(){
-    console.log('Button was clicked')
-
+   console.log('Button was clicked')
     text.textContent ="Hello World"
-    button.textContent = 'I was clicked'
+   button.textContent = 'I was clicked'
 }
 
 function changeIt(){
