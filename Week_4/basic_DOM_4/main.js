@@ -9,5 +9,4 @@ function toggleVisbility() {
     }
   }
 
-
 button.addEventListener('click', toggleVisbility);

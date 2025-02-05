@@ -8,4 +8,5 @@ function countInput(){
         paragraph.textContent = clicks
     }
 
+    
 button.addEventListener ('click', countInput)

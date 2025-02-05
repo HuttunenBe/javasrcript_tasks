@@ -11,5 +11,6 @@ function background(){
   document.body.style.backgroundColor=randomColor
 }
 
+
 button.addEventListener('click', background)
 

@@ -7,6 +7,7 @@ function updateList(){
     div.appendChild(newAdd);
     userInput.value = '';
 
+    
 
 }
 
