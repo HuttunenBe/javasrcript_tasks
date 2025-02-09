@@ -27,4 +27,4 @@ function getDayName(day){
     return answer;
 }
 
-    console.log (getDayName(1));
+    console.log (getDayName(4));

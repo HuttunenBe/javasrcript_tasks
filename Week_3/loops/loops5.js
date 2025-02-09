@@ -2,7 +2,7 @@ const calculateAverageUntilZero = () => {
   let count = 0
   let result = 0
   let num;
-  while ((num !== true)) {
+  while ((num !== 0)) {
     num = Number(prompt("Give me a number"));
     if (num === 0) break;
     result = num + result;

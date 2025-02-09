@@ -1,7 +1,9 @@
 const buildGroceryList = () => {
     let list = []
     while (true) {
-        let input = prompt("Input groceries please")
+        let input = prompt("Input groceries please");
+
+        
         if (input === 'done'){
             break
 

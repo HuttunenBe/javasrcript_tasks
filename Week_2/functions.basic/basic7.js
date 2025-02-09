@@ -3,4 +3,4 @@ const containsWord = (sentence, word) => {
 }
 
 
-console.log (containsWord('Javascript word more is fun!', 'fun!'));
+console.log (containsWord('Javascript word more is fun!', 'fffun!'));
