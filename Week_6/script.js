@@ -1,40 +1,31 @@
 const animalList = ["pig", "cat", "horse", "fish", "guinea pig"];
 const input = document.getElementById("animalInput")
 const button = document.getElementById("sortAnimals")
-const addNewAnimal = document.getElementsByClassName("add-animal")
+const addNewAnimal = document.getElementsByClassName("add-animal")[0]
 
 
-function displayAnimal (){
-  animalList.forEach ( item => input.value)
-  
+function displayAnimals(){
+  for (let i in animalList) {
+    const newItem = document.createElement('li');
+    newItem.textContent = animalList[i];
+    addNewAnimal.appendChild(newItem);
+  }
 }
 
-
-// have a function displayAnimals
-/* 
-for ... of
-
-
-
-for (let i = 0; i < data.length; i++) {
-  console.log(data[i]); 
-} */
-
-
-
+displayAnimals()
 
 function updateAnimalList (){
   const newItem = document.createElement('li')
-  newItem.textContent = input.value;
-  addNewAnimal.appendchild(newItem);
-  input.value = '';
+  newItem.textContent = animalList.value;
+  addNewAnimal.appendChild(newItem);
+  animalList.value = '';
   displayAnimals()
 
 }
 
 button.addEventListener('click', updateAnimalList)
 
-displayAnimals()
+
 
 
 

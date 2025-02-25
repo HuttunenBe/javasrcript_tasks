@@ -9,22 +9,33 @@ const calculateTotal = () => {
   let totalPrice = parseFloat(pancakeType.value);
   console.log("Event was triggered");
 
-  toppings.forEach( (topping) => {
+  function random(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  function textColor() {
+    const randomColor =
+      "rgb(" + random(256) + "," + random(256) + "," + random(256) + ")";
+    totalPriceDisplay.style.color = randomColor;
+    totalPriceBanner.style.color = randomColor;
+  }
+
+  toppings.forEach((topping) => {
     if (topping.checked) {
       totalPrice += parseFloat(topping.value);
     }
   });
 
   extras.forEach((extra) => {
-    if (extra.checked){
+    if (extra.checked) {
       totalPrice += parseFloat(extra.value);
     }
   });
 
   totalPriceDisplay.textContent = `${totalPrice} €`;
   totalPriceBanner.textContent = `${totalPrice} €`;
+
+  textColor()
 };
 
-pancakeForm.addEventListener("change", calculateTotal);
-
-document.addEventListener("change", calculateTotal);
+pancakeForm.addEventListener("change", calculateTotal)
