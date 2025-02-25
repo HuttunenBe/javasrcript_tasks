@@ -2,6 +2,9 @@ const animalSimple = ["pig", "cat", "coyote", "horse", "fish", "guinea pig"];
 const animalList = document.querySelector("#animalList");
 const animalButton = document.querySelector("#addAnimal");
 const nameInput = document.querySelector("#newAnimalName");
+const typeInput = document.querySelector('#"newAnimalType')
+const ageInput = 
+const colorInput
 const searchInput = document.querySelector("#searchAnimal");
 const sortButton = document.querySelector("#sortAnimals");
 const filterType = document.querySelector("#filterType");
@@ -29,9 +32,8 @@ const displayAnimals = (animalArray) => {
 
 const addAnimal = () => {
   const nameInput = document.querySelector("#newAnimalName").value.trim();
-  animals.push(nameInput);
+  animals.push(nameInput, typeInput, ageInput, colorInput);
   displayAnimals(animals);
-  console.log(animals);
   document.querySelector("#newAnimalName").value = "";
 };
 
@@ -58,7 +60,7 @@ const filterByTypeAnimal = () => {
 };
 
 const sortAnimals = () => {
-  animals.sort();
+  animals.sort((a, b) => a.name.localeCompare(b.name)); 
   displayAnimals(animals);
 };
 
