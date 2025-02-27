@@ -1,25 +1,18 @@
-/* Task 1
-Create a JavaScript array named `library` that represents a collection of books.
-Each book should have properties for `title`, `author`, and `yearPublished`.
-Add at least two book objects to this collection.
-*/
-
+/* Task 1 */
 
 const library = [
-    { title: "Book1", author: "John", yearPublished: 200},
-    { title: "Book2", author: "Maria", yearPublished: 1993},
-    { title: "Book3", author: "Anna", yearPublished: 2014},
-    { title: "Book4", author: "Amy", yearPublished: 2015}
-  ];
+    { title: "Book1", author: "John", yearPublished: 200 },
+    { title: "Book2", author: "Maria", yearPublished: 1993 },
+    { title: "Book3", author: "Anna", yearPublished: 2014 },
+    { title: "Book4", author: "Amy", yearPublished: 2015 },
+    { title: "Book5", author: "Anton", yearPublished: 2016 }
+];
 
-/* Task 2
+/* Task 2 */
 
-Modify the `yearPublished` for the second book in the collection to a new year, then log the updated book object to the console.
-*/
 
 console.log(library[0].title)
 library[1].yearPublished = 1892;
-console.log(library);
 
 
 /* Task 3 */
@@ -68,6 +61,10 @@ Test `createBook` by creating a new book object with user-provided input and log
 
 // Your code here
 
+const createBook = (title, author, yearPublished, genres) =>{
+
+}
+
 /* Task 6*/
 
 const library = [
@@ -86,10 +83,7 @@ console.log(backTo)
 console.log(backTo[0].title)
 
 
-/* Task 7
-Create an array named `students`, where each student has a `name`, `age`, and `grade`.
-Log the name of any student who has a grade higher than 90.
-*/
+/* Task 7 */
 
 const students = [
     { name: "Ana", age: 21, grade: 91},
@@ -100,61 +94,164 @@ const students = [
     
   ];
 
-  if (students grade: >= 90);
-console.log(students.grade > 90)
 
-/* Task 8
-Define an object named `car` with properties for `brand`, `model`, `year`, and `isElectric`.
-Use a function to check if the car is electric. If it is, log `"This car is eco-friendly!"`. Otherwise, log `"This car runs on fuel."`
-*/
+ students.forEach((student) => {
+    if (student.grade > 90) {
+      console.log(student.name);
+    }
+  });
 
-// Your code here
+/* Task 8 */
 
-/* Task 9
-Create a `movies` array where each movie is an object with properties for `title`, `director`, and `rating`.
-Write a loop that logs all movie titles with a rating higher than 8.
-*/
 
-// Your code here
+const moped =  {
+brand: "Aprilia",
+model: "SX",
+year: 2014,
+isElectric: "yes",
+};
 
-/* Task 10
-Write a function `findOldestCar` that takes an array of car objects and returns the car with the earliest `year`.
-*/
+let electrical = (isElectric) => {
+    if (isElectric === "yes") {
+        console.log("This moped is eco-friendly!");
+    } else {
+        console.log("This moped runs on fuel");
+    }
+};
 
-// Your code here
+electrical(moped.isElectric)
 
-/* Task 11
-Define a `userProfiles` array containing objects representing users.
-Each user should have a `username`, `email`, and `isAdmin` property.
-Write a function that filters and returns only the users who are administrators.
-*/
 
-// Your code here
 
-/* Task 12
-Define an array named `orders`, where each order contains `orderId`, `customerName`, `totalAmount`, and `status` (either "pending" or "completed").
-Write a function that returns only the completed orders.
-*/
+/* Task 9 */
 
-// Your code here
+const movies = [
+    { title: "Movie1", director: "John", rating: 9},
+    { title: "Movie2", director: "Maria", rating: 7},
+    { title: "Movie3", director: "Anna", rating: 8},
+    { title: "Movie4", director: "Amy", rating: 5}
+  ];
 
-/* Task 13
-Create an object named `smartphone` with properties for `brand`, `model`, `batteryLife`, and `is5GEnabled`.
-Write a function that logs `"This phone supports 5G!"` if `is5GEnabled` is `true`, otherwise logs `"This phone does not support 5G."`
-*/
+  movies.forEach((movie) => {
+    if (movie.rating >= 8) {
+      console.log(movie.title + " " + movie.rating);
+    }
+  });
 
-// Your code here
 
-/* Task 14
-Define an object named `fox` with properties `name`, `age`, and `habitat`.
-Write a function that logs `"This fox is young"` if its age is under 3, `"This fox is an adult"` if 3 or older.
-*/
 
-// Your code here
 
-/* Task 15
-Define an array named `employees`, where each employee has `name`, `position`, and `salary`.
-Write a function that calculates the total salary of all employees in the company.
-*/
+/* Task 10 */
 
-// Your code here
+const findOldestCar = () => {
+    const cars = [
+        {
+        name: "Toyota",
+        year: 1990
+        },
+        {
+        name: "Audi",
+            year: 1887
+        },
+        {
+        name: "BMW",
+        year: 1490
+        }
+    ];
+    cars.sort(function(a, b) {
+        return a.year - b.year; 
+    });
+
+    
+    return cars[0];
+};
+console.log(findOldestCar());
+/* Task 11 */
+
+const userProfiles = [
+    { username: "Johnn", email: "John", isAdmin: "No" },
+    { username: "Annnna", email: "Anna", isAdmin: "Yes" },
+    { username: "MarcMarc", email: "Marc", isAdmin: "Yes" }
+];
+
+userProfiles.forEach((user) => {
+    if (user.isAdmin === "Yes") {
+        console.log(user);
+    }
+});
+
+/* Task 12 */
+
+const orders = [
+    { orderId: "12", customerName: "John", totalAmount: 210, status: "completed"},
+    { orderId: "13", customerName: "Amy", totalAmount: 40, status: "Nan"},
+    { orderId: "14", customerName: "Anna", totalAmount: 25, status: "notCompleted"},
+    { orderId: "15", customerName: "MArcus", totalAmount: 34, status: "completed"},
+  ];
+
+  orders.forEach((order) => {
+    if (order.status === "completed") {
+      console.log(order);
+    }
+  });
+
+/* Task 13 */ 
+
+let smartphone =  {
+    brand: "Apple",
+    model: 13,
+    batteryLife: "horrible",
+    is5GEnabled: true
+    };
+
+    let is5GEnabledCheck = (is5GEnabled) => {
+        if (smartphone.is5GEnabled === true) {
+            console.log("This phone supports 5G!");
+        } else {
+            console.log("This phone does not support 5G.");
+        }
+    };
+    
+    is5GEnabledCheck()
+
+
+
+/* Task 14 */
+
+let foxInfo =  {
+    name: "fox",
+    age: 10,
+    habitat: "wild",
+    };
+    
+        let ageCheck = (age) => {
+            if (foxInfo.age >= 3) {
+                console.log("This fox is an adult");
+            } else {
+                console.log("This fox is young");
+            }
+        };
+        
+        ageCheck()
+
+
+
+
+/* Task 15 */
+
+const employees = [
+{ name: "Max", position: "Employee", salary: 2000 },
+{ name: "Masa", position: "Employee", salary: 19930 },
+{ name: "Mikko", position: "Employee", salary: 20140 },
+{ name: "Mika", position: "Employee", salary: 20150 }
+  ];
+  
+  function calculator(employees) {
+    let result = 0;
+    for (let i = 0; i < employees.length; i++) {  
+      result += employees[i].salary
+    }
+    return result;
+  }
+  
+  console.log("$" + calculator(employees)); 

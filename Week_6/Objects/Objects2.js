@@ -1,29 +1,87 @@
-/* Task 1
-Create an object `weather` that contains properties `temperature`, `humidity`, and `condition` (e.g., "Sunny", "Rainy").
-Write a function that logs `"Take an umbrella!"` if it's rainy.
-*/
+/* Task 1 */
 
-// Your code here
+
+const weather = [
+    { temperature: "12", humidity: "100%",condition: "sunny" },
+    { temperature: "3", humidity: "90%",condition: "rainy" },
+    { temperature: "-2", humidity: "87%",condition: "sunny" },
+    { temperature: "-9", humidity: "67%",condition: "rainy" },
+   
+      ];
+    
+      weather.forEach((weather) => {
+        if (weather.condition === "rainy") {
+            console.log("Take an umbrella!");
+        }
+    });
 
 /* Task 2
 Define an object named `shoppingCart` that contains an array of items.
 Each item has `name`, `price`, and `quantity`.
 Write a function that calculates the total price of all items in the cart.
 */
+const shoppinCart = () => {
+    const cars = [
+        {
+        name: "Banana",
+        price: 1.2,
+        quantity: 3
+        },
+        {
+            name: "Apples",
+            price: 1.5,
+            quantity: 5
+            },
+            {
+                name: "Soda",
+                price: 1.3,
+                quantity: 9
+                },
+    ];
+
+ 
 
 // Your code here
 
-/* Task 3
-Create an array of objects named `restaurants`, each with properties `name`, `cuisineType`, and `rating`.
-Write a function that returns only the restaurants with a rating of 4 or higher.
-*/
+/* Task 3 */
 
-// Your code here
+const restaurants = [
+    { name: "Burger king", cuisineType: "Fast food",rating: 2},
+    { name: "Amarillo", cuisineType: "Hamburgers",rating: 3},
+    { name: "Pizzeria", cuisineType: "Pizza",rating: 2},
+    { name: "Loivu", cuisineType: "Finnish",rating: 5},
+   
+      ];
+
+      restaurants.forEach((restaurant) => {
+        if (restaurant.rating >= 5) {
+          console.log(restaurant);
+        }
+      });
+    
 
 /* Task 4
 Define an object named `bankAccount` with properties `accountHolder`, `balance`, and `transactions` (an array of numbers).
 Write a function that calculates the total balance after all transactions.
 */
+
+
+const bankAccount = [
+    { accountHolder: "Max", balance: 10200 , trasaction: 2000 },
+    { accountHolder: "Minni", balance: 12303, trasaction: -2000 },
+    { accountHolder: "Manu", balance: 23034, trasaction: 2000 },
+    { accountHolder: "Misa", balance: 202344, trasaction: 2000 },
+]
+      function calculator(balance transaction) {
+        let result = 0;
+        for (let i = 0; i < employees.length; i++) {  
+          result += employees[i].salary
+        }
+        return result;
+      }
+      
+      console.log("$" + calculator(employees)); 
+    
 
 // Your code here
 
