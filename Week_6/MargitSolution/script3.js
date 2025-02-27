@@ -3,8 +3,6 @@ const animalList = document.querySelector("#animalList");
 const animalButton = document.querySelector("#addAnimal");
 const nameInput = document.querySelector("#newAnimalName");
 const typeInput = document.querySelector('#"newAnimalType')
-const ageInput = 
-const colorInput
 const searchInput = document.querySelector("#searchAnimal");
 const sortButton = document.querySelector("#sortAnimals");
 const filterType = document.querySelector("#filterType");
