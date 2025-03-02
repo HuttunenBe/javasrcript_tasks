@@ -15,13 +15,9 @@ const weather = [
         }
     });
 
-/* Task 2
-Define an object named `shoppingCart` that contains an array of items.
-Each item has `name`, `price`, and `quantity`.
-Write a function that calculates the total price of all items in the cart.
-*/
-const shoppinCart = () => {
-    const cars = [
+/* Task 2*/ 
+const shoppinCart = {
+    items: [
         {
         name: "Banana",
         price: 1.2,
@@ -37,11 +33,18 @@ const shoppinCart = () => {
                 price: 1.3,
                 quantity: 9
                 },
-    ];
+    ]};
 
- 
+    const calculateTotal = (items) => {
+      let totalPrice = 0;
+      items.forEach(item => {
+        totalPrice += item.price * item.quantity;  
+      });
+      return totalPrice; 
+    };
 
-// Your code here
+    console.log(calculateTotal(shoppinCart.items));
+
 
 /* Task 3 */
 
@@ -60,10 +63,7 @@ const restaurants = [
       });
     
 
-/* Task 4
-Define an object named `bankAccount` with properties `accountHolder`, `balance`, and `transactions` (an array of numbers).
-Write a function that calculates the total balance after all transactions.
-*/
+/* Task 4 */
 
 
 const bankAccount = [
@@ -72,93 +72,238 @@ const bankAccount = [
     { accountHolder: "Manu", balance: 23034, trasaction: 2000 },
     { accountHolder: "Misa", balance: 202344, trasaction: 2000 },
 ]
-      function calculator(balance transaction) {
-        let result = 0;
-        for (let i = 0; i < employees.length; i++) {  
-          result += employees[i].salary
-        }
-        return result;
-      }
-      
-      console.log("$" + calculator(employees)); 
-    
+const calculator = (accounts) => {
+  let totalBalance = 0;
+  accounts.forEach(account => {
+    totalBalance += account.balance + account.trasaction;
+  });
+  return totalBalance;
+}
 
-// Your code here
+    
+      console.log(calculator(bankAccount))
+
+
 
 /* Task 5
 Create an array `students` where each student has `name`, `scores` (array of numbers), and `averageScore` (initially null).
 Write a function that calculates and updates each student's `averageScore`.
 */
 
-// Your code here
+const students = [
+  {name: "Anna", scores: [90, 80, 66], averageScore: null},
+  {name: "Elias", scores: [93, 55, 98], averageScore: null},
+  {name: "Hannu", scores: [92, 81, 53], averageScore: null},
+]
 
-/* Task 6
-Define an array named `courses`, each containing `courseName`, `instructor`, and `studentsEnrolled`.
-Write a function that logs the course name of any course with more than 30 students.
-*/
+function calculateAverage(scores) {
+  let sum = 0;
+  for (let i = 0; i < scores.length; i++) {
+      sum += scores[i];
+  }
+  return sum / scores.length;
+}
+console.log(students)
+console.log(calculateAverage(students))
 
-// Your code here
+for (let i = 0; i < Students.length; i++){
+  var average = Students[i].reduce((total, next)=> total + next.marks) /2 
+}
 
-/* Task 7
-Create an object `pet` with properties `species`, `name`, and `isVaccinated`.
-Write a function that returns `"Vaccination required"` if the pet is not vaccinated.
-*/
+console.log(average)
 
-// Your code here
 
-/* Task 8
-Define an object named `city` with properties `name`, `population`, and `landmark`.
-Write a function that logs `"This is a big city!"` if the population exceeds 1,000,000.
-*/
 
-// Your code here
+/* Task 6 */ 
 
-/* Task 9
-Create an array `transactions`, where each transaction is an object with `type` ("credit" or "debit") and `amount`.
-Write a function that calculates the total balance after processing all transactions.
-*/
+const courses = [
+  { courseName: "Math", instructor: "Huttunen", studentsEnrolled: 25 },
+  { courseName: "History", instructor: "Auvinen", studentsEnrolled: 35 },
+  { courseName: "Arts", instructor: "Ruotsalainen", studentsEnrolled: 40 },
+  { courseName: "Biology", instructor: "White", studentsEnrolled: 28 }
 
-// Your code here
+];
 
-/* Task 10
-Define an object named `foxPack` containing an array of fox objects.
-Each fox has `name`, `age`, and `furColor`.
-Write a function that filters out only the foxes that are younger than 2.
-*/
+let studentNumbers = (courses) => {
+  courses.forEach(course => {
+    if (course.studentsEnrolled >= 30) {
+      console.log(course.courseName); 
+    }
+  });
+};
 
-// Your code here
+studentNumbers(courses)
 
-/* Task 11
-Create an object `gameCharacter` with properties `name`, `level`, `health`, and `inventory` (an array).
-Write a function that logs all items in the character’s inventory.
-*/
 
-// Your code here
 
-/* Task 12
-Define an array named `employees`, where each employee has a `name`, `role`, and `workingHours`.
-Write a function that finds and logs employees who work more than 40 hours.
-*/
 
-// Your code here
+/* Task 7 */
 
-/* Task 13
-Create an array `musicAlbums` where each album has `title`, `artist`, and `releaseYear`.
-Write a function that logs albums released after 2000.
-*/
+const pet ={
+  species: "fox",
+  name: "John",
+  isVaccinated: true
+};
 
-// Your code here
+const checkVaccination = (pet) =>  {
+  if (pet.isVaccinated === true) {
+    return "Vaccination not required"
+  } else {
+    return "Vaccination required"
+  }
+}
 
-/* Task 14
-Define an array named `cars`, each containing `brand`, `model`, and `horsepower`.
-Write a function that finds and returns the car with the highest horsepower.
-*/
+console.log(checkVaccination(pet));
 
-// Your code here
+/* Task 8 */
 
-/* Task 15
-Create an array of `airports`, where each airport has `name`, `country`, and `flightsPerDay`.
-Write a function that finds the airport with the most daily flights.
-*/
+const city = {
+  name: "Helsinki",
+  population: 400000,
+  landmark: "Suomenlinna"
+};
 
-// Your code here
+
+const bigCity = (city) => {
+    if (city.population >= 1000) {
+      console.log("This is a big city!"); 
+    }
+  }
+
+bigCity(city)
+
+/* Task 9 */ 
+
+const transactions = [
+  { type: "credit", amount: 1000 },
+  { type: "debit", amount: 500 },
+  { type: "credit", amount: 200 },
+  { type: "debit", amount: 300 },
+]
+
+
+const calculateBalance = (transactions) =>  {
+  let balance = 0;
+  transactions.forEach(transaction => {
+    balance += transaction.amount
+  })
+
+
+  return balance; };
+
+console.log(calculateBalance(transactions));
+
+/* Task 10 */
+
+const foxPack = {
+  foxes: [
+    { name: "Anu", age: 3, furColor: "Red" },
+    { name: "Hannu", age: 5, furColor: "Brown" },
+    { name: "Heli", age: 2, furColor: "Silver" },
+    { name: "Hanna", age: 4, furColor: "Orange" }
+  ]}
+
+  const youngFox = (foxes) => {
+    foxes.forEach(fox => {
+    if (fox.age <= 3) {
+      console.log(fox); 
+    }
+  })}
+
+youngFox(foxPack.foxes);
+
+/* Task 11 */
+
+
+const gameCharacter = {
+  name: "character",
+  level: 88,
+  health: 92,
+  inventory: ["knife", "sword", "health potion"], 
+};
+
+const logInventory = () =>{
+  console.log(gameCharacter.inventory)
+}
+
+logInventory()
+
+/* Task 12 */
+
+const employees = [
+  { name: "Joni", role: "Manager", workingHours: 35 },
+  { name: "Krista", role: "Developer", workingHours: 35 },
+  { name: "Anna", role: "Designer", workingHours: 40 },
+  { name: "Maria", role: "Developer", workingHours: 40 },
+];
+
+const workHours = (employees) => {
+  employees.forEach(employee => {
+  if (employee.workingHours >= 40) {
+    console.log(employee.name); 
+  }
+})
+};
+workHours(employees)
+
+/* Task 13 */
+
+const musicAlbums = [
+  { title: "album1", artist: "Behm", releaseYear: 2023 },
+  { title: "album2", artist: "David Bowie", releaseYear: 1983 },
+  { title: "album3", artist: "Queen", releaseYear: 1985 },
+];
+
+const yearCheck = (musicalAlbums) => {
+  musicAlbums.forEach(album => {
+  if (album.releaseYear >= 2000) {
+    console.log(album.title); 
+  }
+})
+};
+yearCheck(musicAlbums)
+
+/* Task 14 */
+
+const cars = [
+  { brand: "Toyota", model: "Model3", horsepower: 132 },
+  { brand: "Ford", model: "Model2", horsepower: 450 },
+  { brand: "Audi", model: ",Model3", horsepower: 283 }
+];
+
+
+function mostHorsepower(arr) {
+  let max = arr[0];
+
+ 
+  for (let i = 1; i < arr.length; i++)
+      if (arr[i].horsepower > max.horsepower)
+          max = arr[i];
+
+  return max;
+}
+
+console.log(mostHorsepower(cars))
+
+/* Task 15 */
+
+
+const airports = [
+  { name: "London Heathrow Airport", country: "UK", flightsPerDay: 200 },
+  { name: "Tokyo Narita Airport", country: "Japan", flightsPerDay: 180 },
+  { name: "Helsinki-Vantaan lentokenttä", country: "Finland", flightsPerDay: 170 },
+
+];
+
+function mostFlights(arr) {
+  let max = arr[0];
+
+ 
+  for (let i = 1; i < arr.length; i++)
+      if (arr[i].fligthsPerDay > max.fligtsPerDay)
+          max = arr[i];
+
+  return max;
+}
+
+console.log(mostFlights(airports))

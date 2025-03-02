@@ -62,7 +62,12 @@ Test `createBook` by creating a new book object with user-provided input and log
 // Your code here
 
 const createBook = (title, author, yearPublished, genres) =>{
-
+return {
+  title: title,
+  author: author,
+  yearPublished: yearPublished,
+  genres: genres
+}
 }
 
 /* Task 6*/
