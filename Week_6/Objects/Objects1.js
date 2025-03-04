@@ -1,7 +1,7 @@
 /* Task 1 */
 
 const library = [
-    { title: "Book1", author: "John", yearPublished: 200 },
+    { title: "Book1", author: "John", yearPublished: 2001 },
     { title: "Book2", author: "Maria", yearPublished: 1993 },
     { title: "Book3", author: "Anna", yearPublished: 2014 },
     { title: "Book4", author: "Amy", yearPublished: 2015 },
@@ -61,15 +61,24 @@ Test `createBook` by creating a new book object with user-provided input and log
 
 // Your code here
 
-const createBook = (title, author, yearPublished, genres) =>{
+const createBook = (title, author, yearPublished, genre) =>{
 return {
   title: title,
   author: author,
   yearPublished: yearPublished,
-  genres: genres
+  genre: genre
 }
 }
 
+
+const title = prompt("Book title:");
+const author = prompt("Book author:");
+const yearPublished = prompt("Publish year:")
+const genre = prompt("Book genre:");
+
+const book = createBook(title, author, yearPublished, genre);
+
+console.log(book)
 /* Task 6*/
 
 const library = [

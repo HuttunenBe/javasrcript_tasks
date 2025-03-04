@@ -85,10 +85,7 @@ const calculator = (accounts) => {
 
 
 
-/* Task 5
-Create an array `students` where each student has `name`, `scores` (array of numbers), and `averageScore` (initially null).
-Write a function that calculates and updates each student's `averageScore`.
-*/
+/* Task 5 */ 
 
 const students = [
   {name: "Anna", scores: [90, 80, 66], averageScore: null},
@@ -103,14 +100,14 @@ function calculateAverage(scores) {
   }
   return sum / scores.length;
 }
-console.log(students)
-console.log(calculateAverage(students))
 
-for (let i = 0; i < Students.length; i++){
-  var average = Students[i].reduce((total, next)=> total + next.marks) /2 
+for (let i = 0; i < students.length; i++) {
+  const student = students[i];
+  student.averageScore = calculateAverage(student.scores); 
 }
 
-console.log(average)
+
+console.log(students)
 
 
 

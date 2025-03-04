@@ -6,7 +6,7 @@ function updateFruitList(){
     const newItem = document.createElement('li');
     newItem.textContent = input.value;
     list.appendChild(newItem);
-    input.value = ''; //makes empty so can add another one
+    input.value = ''; 
 }
 
 button.addEventListener('click', updateFruitList)
