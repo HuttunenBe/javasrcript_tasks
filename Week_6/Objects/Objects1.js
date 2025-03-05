@@ -51,15 +51,8 @@ console.log(bookAdd)
 console.log(library)
 
 
-// Your code here
 
-/* Task 5
-Write a function named `createBook` that takes parameters for `title`, `author`, `yearPublished`, and `genres` (an array).
-The function should return a new book object with these properties.
-Test `createBook` by creating a new book object with user-provided input and logging the new book object to the console.
-*/
-
-// Your code here
+/* Task 5 */
 
 const createBook = (title, author, yearPublished, genre) =>{
 return {

@@ -101,35 +101,48 @@ const updateButton = document.querySelector("#update");
 const totalPrice = document.querySelector("#totalPrice");
 
 const updateTotalPrice = () => {
-const quantityToPurchase = parseInt(quantityInput.value);
-const fullPrice = quantityToPurchase * product.price;
-  
-totalPrice.textContent = fullPrice;
+  const quantity = Number(quantityInput.value);
+
+const total = product.price * quantity;
+totalPrice.textContent = total;
 };
 
 updateButton.addEventListener("click", updateTotalPrice);
 
-// Your code here
 
-/* Task 6
-Define a `Task` constructor that takes `title`, `description`, and `completed`.
-Add a button in HTML that, when clicked, adds a new `Task` object to a `tasks` array and displays it on the page.
-*/
-/*
+
+/* Task 6 */
+
 function Task(title, description, completed) {
   this.title = title;
   this.description = description;
   this.completed = completed;
 }
 
-let task = []
+const addButton2 = document.querySelector('#addButton2');
+const taskList = document.querySelector('#taskList');
 
-const addButton2 = document-querySelector('#addButton2')
-addButton2.addEventListener("click", function(){
+addButton2.addEventListener("click", function() {
+const taskTitle = document.querySelector('#taskTitle').value;
+const taskDescription = document.querySelector('#taskDescription').value;
+const taskCompleted = document.querySelector('#taskCompleted').checked;
 
-})
- */
-// Your code here
+ 
+const newTask = new Task(taskTitle, taskDescription, taskCompleted);
+
+const itemList = document.createElement('li');
+const itemText = document.createElement('span');
+  
+itemText.textContent = `${newTask.title}: ${newTask.description} - Completed: ${newTask.completed ? "Yes" : "No"}`;
+
+itemList.appendChild(itemText);
+taskList.appendChild(itemList);
+
+document.querySelector('#taskTitle').value = ''
+document.querySelector('#taskDescription').value = '';
+document.querySelector('#taskCompleted').checked = false;
+});
+
 
 /* Task 7c */
 
@@ -181,22 +194,52 @@ weatherBtn.addEventListener('click', function() {
 );
  
 
-// Your code here
+/* Task 8*/
 
-/* Task 8
-Create a constructor function `Car` that takes `brand`, `model`, and `year`.
-In the constructor, add a method `age()` that calculates the car’s age.
-Instantiate a new `Car` and display its age on the webpage.
-*/
+function Car(brand, model, year) {
+  this.brand = brand;
+  this.model = model;
+  this.year = year;
 
-// Your code here
+  this.age = function() {
+      return new Date().getFullYear() - this.year;
+  };
+}
+
+const carButton = document.querySelector('#carButton');
+const carInfo = document.querySelector('#carInfo');
+
+carButton.addEventListener("click", function() {
+  const carBrand = document.querySelector('#carBrand').value;
+  const carModel = document.querySelector('#carModel').value;
+  const carYear = document.querySelector('#carYear').value;
+
+const newCar = new Car(carBrand, carModel, carYear);
+
+carInfo.textContent = `${newCar.brand} ${newCar.model} is ${newCar.age()} years old.`; 
+
+document.querySelector('#carBrand').value = '';
+document.querySelector('#carModel').value = '';
+  document.querySelector('#carYear').value = '';
+});
+
+
 
 /* Task 9
 Create an array `users` where each user has `name` and `score`.
 Add a button in HTML that sorts the users by score in descending order and updates the displayed list.
 */
 
-// Your code here
+const users = [
+  { name: 'Alice', score: 75 },
+  { name: 'Bob', score: 85 },
+  { name: 'Charlie', score: 65 },
+  { name: 'Amy', score: 95 },
+  { name: 'Ana', score: 80 }
+];
+
+document.
+
 
 /* Task 10 */
 
@@ -235,12 +278,12 @@ Add a "Like" button next to each post that increases the `likes` count and updat
 
 // Your code here
 
-/*const posts = [
+const posts = [
   { title: "Post 1", content: "This is the content of post 1", likes: 0 },
   { title: "Post 2", content: "This is the content of post 2", likes: 3 },
   { title: "Post 3", content: "This is the content of post 3", likes: 5 }
 ];
-
+const postContent = document.querySelector('#postContent')
 const likeButton = document.querySelector ('#likeButton')
 const likeDisplay = document.querySelector('#likeDisplay')
 
@@ -248,43 +291,51 @@ likeButton.addEventListener("click", function(){
 
 })
 
-/* Task 12
-Create a constructor function `Employee` with `name`, `position`, and `salary`.
-Add a method `increaseSalary(percent)` that increases the salary by a given percentage.
-Create an employee and increase their salary dynamically.
-*/
+/* Task 12 */
 
-// Your code here
+
+function Employee(name, position, salary) {
+  this.name = name;
+  this.position = position;
+  this.salary = Number(salary);
+
+  this.increaseSalary = function (percent) {
+    this.salary += this.salary * (percent/100)
+  }
+};
+
+const newEmpolyee = new Employee('John', 'boss', '5000');
+newEmpolyee.increaseSalary(10);
+console.log(newEmpolyee.salary);
+
+
 
 /* Task 13 */
 
-/*const display = document.querySelector("#timerDisplay");
+const display = document.querySelector("#timerDisplay");
 const start = document.querySelector("#start");
 
-function Timer() {
+const timer = {
+  seconds: 0,
 
-  this.seconds = 0 
-  const self = this
+start: function() {
+let sec = 0; 
+    this.isRunning = true;
+    start.disabled = true;
+    
+   this.timer = setInterval(() => {
+    display.innerHTML = '00:' + (sec < 10 ? '0' : '') + sec; 
+    sec++; 
+}, 1000); 
+  },
 
-
-  this.tick = function() {
-    self.seconds += 1 
-    self.updateTimer()
-
-    setTimeout(function() {
-      self.tick()
-    }, 1000)
-  };
-
-  this.updateTimer = function() {
-    display.textContent = self.seconds; 
+pause: function() {
+clearInterval(this.timer); 
   }
-} 
-
-const myTimer = new Timer() 
+};
 
 start.addEventListener("click", function() {
-  myTimer.tick(); 
+timer.start();  
 });
 
 /* Task 14
@@ -299,3 +350,4 @@ Create an object `foxTracker` with a `foxes` array.
 Add an input field and button that allows users to add new foxes (with name and location) to the array.
 Display the list of foxes dynamically in an HTML element.
 */
+
